@@ -25,5 +25,9 @@
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.lemonlab.mat.fragments.ResultFragment"
-        android:label="ResultFragment" />
+        android:label="ResultFragment" >
+        <argument
+            android:name="yesesCounter"
+            app:argType="integer" />
+    </fragment>
 </navigation>

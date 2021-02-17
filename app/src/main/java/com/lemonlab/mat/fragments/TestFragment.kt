@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.lemonlab.mat.R
 import com.lemonlab.mat.databinding.FragmentTestBinding
 
@@ -51,7 +52,7 @@ class TestFragment : Fragment() {
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
     private val numQuestions = 15
-    private var counterOfYeses =0
+    private var yesesCounter =0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -76,29 +77,27 @@ class TestFragment : Fragment() {
                     R.id.radio_button_no -> answerIndex = 1
                 }
                 when {
-                    answers[answerIndex] == currentQuestion.answers[0] -> {
+                    answers[answerIndex] == currentQuestion.answers[0] && questionIndex < numQuestions-> {
                         questionIndex++
-                        counterOfYeses += 1
+                        yesesCounter += 1
                         setQuestion(questionIndex)
                         binding.invalidateAll()
                     }
-                    questionIndex < numQuestions -> {
+                    answers[answerIndex] != currentQuestion.answers[0] && questionIndex < numQuestions -> {
                         questionIndex++
                         setQuestion(questionIndex)
                         binding.invalidateAll()
-
                     }
                     questionIndex == numQuestions-> {
                         if(answers[answerIndex] == currentQuestion.answers[0])
                         {
-                            counterOfYeses += 1
+                            yesesCounter += 1
                             Navigation.findNavController(it)
                                 .navigate(R.id.action_testFragment_to_resultFragment)
                         }
                         Navigation.findNavController(it)
                             .navigate(R.id.action_testFragment_to_resultFragment)
                     }
-
                 }
                 }
             }
