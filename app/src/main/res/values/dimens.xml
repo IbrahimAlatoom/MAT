@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="vertical_margin">16dp</dimen>
+    <dimen name="horizontal_margin">8dp</dimen>
+    <dimen name="question_text_size">24sp</dimen>
+    <dimen name="vertical_answer_margin">8dp</dimen>
+    <dimen name="horizontal_question_margin">32dp</dimen>
+</resources>
