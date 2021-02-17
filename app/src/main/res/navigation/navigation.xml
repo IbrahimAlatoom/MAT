@@ -29,5 +29,8 @@
         <argument
             android:name="yesesCounter"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_resultFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
     </fragment>
 </navigation>
