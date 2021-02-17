@@ -75,17 +75,29 @@ class TestFragment : Fragment() {
                     R.id.radio_button_yes -> answerIndex = 0
                     R.id.radio_button_no -> answerIndex = 1
                 }
-                if (answers[answerIndex] == currentQuestion.answers[0]) {
-                    questionIndex++
-                    counterOfYeses += 1
-                }
-                // Advance to the next question
-                else if (questionIndex <= numQuestions) {
-                    questionIndex++
-                    setQuestion(questionIndex)
-                    binding.invalidateAll()
+                when {
+                    answers[answerIndex] == currentQuestion.answers[0] -> {
+                        questionIndex++
+                        counterOfYeses += 1
+                        setQuestion(questionIndex)
+                        binding.invalidateAll()
                     }
-                else{
+                    questionIndex < numQuestions -> {
+                        questionIndex++
+                        setQuestion(questionIndex)
+                        binding.invalidateAll()
+
+                    }
+                    questionIndex == numQuestions-> {
+                        if(answers[answerIndex] == currentQuestion.answers[0])
+                        {
+                            counterOfYeses += 1
+                            Navigation.findNavController(it)
+                                .navigate(R.id.action_testFragment_to_resultFragment)
+                        }
+                        Navigation.findNavController(it)
+                            .navigate(R.id.action_testFragment_to_resultFragment)
+                    }
 
                 }
                 }
@@ -96,10 +108,10 @@ class TestFragment : Fragment() {
     }
 
     private fun setQuestion(index:Int) {
-        currentQuestion = questions[questionIndex]
-        // randomize the answers into a copy of the array
+        if(index<numQuestions){
+        currentQuestion = questions[index]
         answers = currentQuestion.answers.toMutableList()
-        // and shuffle them
         answers.shuffle()
+        }
     }
 }
