@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.lemonlab.mat.R
 import com.lemonlab.mat.databinding.FragmentTestBinding
 
@@ -34,29 +35,71 @@ class TestFragment : Fragment() {
         Question(text = "هل ترسل رسائل نصية أو بريد إلكتروني أو تغرد أو تتصفح أثناء القيادة أو تقوم بأنشطة أخرى مماثلة تتطلب تركيزك وانتباهك؟",
             answers = listOf("نعم", "لا")),
         Question(text = "هل تشعر أن استخدامك لهاتفك الذكي يقلل من إنتاجيتك في بعض الأحيان؟",
+            answers = listOf("نعم", "لا")),
+        Question(text = "هل تشعر بالتردد في البقاء بدون هاتفك الذكي ، حتى لفترة قصيرة؟",
+            answers = listOf("نعم", "لا")),
+        Question(text = "هل تشعر بعدم الراحة أو عدم الارتياح عندما تترك هاتفك الذكي عن طريق الخطأ في السيارة أو في المنزل ، أو لا توجد لديك خدمة إنترنت أو حينما يكسر هاتفك؟",
+            answers = listOf("نعم", "لا")),
+        Question(text = "عندما تأكل وجبات الطعام ، هل هاتفك الذكي دائمًا جزء من إعداد مكان الطاولة؟",
+            answers = listOf("نعم", "لا")),
+        Question(text = "عندما يرن هاتفك الذكي أو يصدر صفيرًا ، هل تشعر برغبة شديدة في التحقق من النصوص والتغريدات ورسائل البريد الإلكتروني والتحديثات وما إلى ذلك؟",
+            answers = listOf("نعم", "لا")),
+        Question(text = "هل تجد نفسك تتفقد هاتفك المحمول أو هاتفك الذكي دون تفكير عدة مرات في اليوم ، حتى عندما تعلم أنه من المحتمل ألا يكون هناك شيء جديد أو مهم لتراه؟",
             answers = listOf("نعم", "لا"))
     )
     lateinit var currentQuestion: Question
+    lateinit var answers: MutableList<String>
+    private var questionIndex = 0
+    private val numQuestions = 15
+    private var counterOfYeses =0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_test, container, false)
+
+        setQuestion(questionIndex)
+
+        binding.test = this
+
+        binding.submitButton.setOnClickListener(){
+            val checkedId = binding.questionRadioGroup.checkedRadioButtonId
+
+            if (-1 != checkedId) {
+                var answerIndex = 0
+                when (checkedId) {
+                    R.id.radio_button_yes -> answerIndex = 0
+                    R.id.radio_button_no -> answerIndex = 1
+                }
+                if (answers[answerIndex] == currentQuestion.answers[0]) {
+                    questionIndex++
+                    counterOfYeses += 1
+                }
+                // Advance to the next question
+                else if (questionIndex <= numQuestions) {
+                    questionIndex++
+                    setQuestion(questionIndex)
+                    binding.invalidateAll()
+                    }
+                else{
+
+                }
+                }
+            }
+
+
         return binding.root
-
-
-
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-
+    private fun setQuestion(index:Int) {
+        currentQuestion = questions[questionIndex]
+        // randomize the answers into a copy of the array
+        answers = currentQuestion.answers.toMutableList()
+        // and shuffle them
+        answers.shuffle()
     }
 }
