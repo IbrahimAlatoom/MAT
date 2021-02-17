@@ -69,39 +69,21 @@ class TestFragment : Fragment() {
 
         binding.submitButton.setOnClickListener(){
             val checkedId = binding.questionRadioGroup.checkedRadioButtonId
-
             if (-1 != checkedId) {
-                var answerIndex = 0
                 when (checkedId) {
-                    R.id.radio_button_yes -> answerIndex = 0
-                    R.id.radio_button_no -> answerIndex = 1
+                    R.id.radio_button_yes -> yesesCounter++
                 }
-                when {
-                    answers[answerIndex] == currentQuestion.answers[0] && questionIndex < numQuestions-> {
-                        questionIndex++
-                        yesesCounter += 1
-                        setQuestion(questionIndex)
-                        binding.invalidateAll()
-                    }
-                    answers[answerIndex] != currentQuestion.answers[0] && questionIndex < numQuestions -> {
-                        questionIndex++
-                        setQuestion(questionIndex)
-                        binding.invalidateAll()
-                    }
-                    questionIndex == numQuestions-> {
-                        if(answers[answerIndex] == currentQuestion.answers[0])
-                        {
-                            yesesCounter += 1
-                            Navigation.findNavController(it)
-                                .navigate(R.id.action_testFragment_to_resultFragment)
-                        }
-                        Navigation.findNavController(it)
-                            .navigate(R.id.action_testFragment_to_resultFragment)
-                    }
+                if (questionIndex == numQuestions) {
+                    var navController = findNavController()
+                    navController.navigate(TestFragmentDirections.actionTestFragmentToResultFragment(yesesCounter))
+                    questionIndex=0
+                    yesesCounter=0
                 }
+                questionIndex++
+                setQuestion(questionIndex)
+                binding.invalidateAll()
                 }
             }
-
 
         return binding.root
     }
@@ -110,7 +92,7 @@ class TestFragment : Fragment() {
         if(index<numQuestions){
         currentQuestion = questions[index]
         answers = currentQuestion.answers.toMutableList()
-        answers.shuffle()
+
         }
     }
 }

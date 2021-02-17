@@ -23,6 +23,14 @@ class ResultFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_result,container,false)
 
+        val args = ResultFragmentArgs.fromBundle(requireArguments())
+        when (args.yesesCounter) {
+            in 0..2 -> binding.resultText.text = "سلوكك طبيعي ولكن هذا لا يعني أنك يجب أن تعيش على هاتفك الذكي"
+            in 3..4 -> binding.resultText.text = "سلوكك يميل نحو الاستخدام القهري(الإدماني)."
+            in 5..7 -> binding.resultText.text = "من المحتمل أن يكون لديك نمط استخدام هاتف ذكي قهري."
+            in 8..15 -> binding.resultText.text = "تفكر في زيارة طبيب نفسي أو معالج نفسي متخصص في الإدمان السلوكي للحصول على استشارة."
+        }
+
         return binding.root
 
     }
