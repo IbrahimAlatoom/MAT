@@ -28,6 +28,7 @@
         android:layout_marginStart="@dimen/horizontal_question_margin"
         android:layout_marginTop="@dimen/question_text_size"
         android:layout_marginEnd="@dimen/horizontal_question_margin"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="@dimen/question_text_size"
@@ -39,7 +40,7 @@
     <Button
         android:id="@+id/back_button"
         style="@android:style/Widget.DeviceDefault.Button.Colored"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/horizontal_question_margin"
         android:layout_marginTop="@dimen/vertical_margin"
