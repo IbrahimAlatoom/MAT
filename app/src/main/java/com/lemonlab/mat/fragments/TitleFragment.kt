@@ -30,7 +30,7 @@ class TitleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.button.setOnClickListener(
+        binding.startTestButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(
                 R.id.action_titleFragment_to_alertFragment
             )
