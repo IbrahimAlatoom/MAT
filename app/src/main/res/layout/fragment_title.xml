@@ -8,13 +8,28 @@
     tools:context=".fragments.TitleFragment">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/start_test_button"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="@dimen/button_width"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tilte_text"
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontal_question_margin"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:layout_marginEnd="@dimen/horizontal_question_margin"
+        android:fontFamily="casual"
+        android:text="@string/name"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
