@@ -30,9 +30,9 @@ class ResultFragment : Fragment() {
 
         when (args.yesesCounter){
             in 0..2 -> binding.resultText.text = "سلوكك طبيعي ولكن هذا لا يعني أنك يجب أن تعيش على هاتفك الذكي"
-            in 3..4 -> binding.resultText.text = "سلوكك يميل نحو الاستخدام القهري(الإدماني)."
-            in 5..7 -> binding.resultText.text = "من المحتمل أن يكون لديك نمط استخدام هاتف ذكي قهري."
-            in 8..16 -> binding.resultText.text = "تفكر في زيارة طبيب نفسي أو معالج نفسي متخصص في الإدمان السلوكي للحصول على استشارة."
+            in 3..4 -> binding.resultText.text = "سلوكك يميل نحو الاستخدام القهري(الإدماني).لا داعي للقلق أيضا، ولكن يجب ألا تدع الهاتف يسلبك المزيد من الوقت من حياتك."
+            in 5..7 -> binding.resultText.text = "يحتمل أن تكون هناك مشكلة، ويجب أن تفكر بشكل استباقي في كيفية منع نفسك من أن تصبح مدمن للهاتف الذكي الخاص بك."
+            in 8..16 -> binding.resultText.text = "قد أدمنت هاتفك المحمول وتحتاج إلى إحداث تغييرات، فالهاتف يبقى أداة وليس نمط حياة."
         }
         binding.backButton.setOnClickListener(){
             navController = findNavController()
