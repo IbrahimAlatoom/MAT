@@ -6,4 +6,5 @@
     <dimen name="vertical_answer_margin">8dp</dimen>
     <dimen name="horizontal_question_margin">32dp</dimen>
     <dimen name="title_text_size">30sp</dimen>
+    <dimen name="button_width">150dp</dimen>
 </resources>

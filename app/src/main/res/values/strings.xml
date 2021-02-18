@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">MAT</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="alert">"تنبية! "</string>
     <string name="alert_text">إخلاء المسؤولية: تجدر الإشارة إلى أنه لا يمكن إجراء تشخيص طبي أو نفسي فقط عن طريق اختبار كتابي أو أداة فحص فقط ؛  هذا المسح مخصص للأغراض التعليمية والمعلوماتية فقط.
  إذا كانت النتيجة في الجانب الأعلى ، فسيكون من المعقول فحص ما إذا كان استخدامك أو الإفراط في استخدامك يسبب أي مشاكل في التوازن بين العمل والحياة.        </string>
-    <string name="agree">Next</string>
-    <string name="next">next</string>
+    <string name="agree">ابدأ</string>
+    <string name="next">التالي</string>
     <string name="name">اختبار ادمان الهاتف الذكي</string>
-    <string name="submit">submit</string>
+    <string name="submit">التالي</string>
 </resources>

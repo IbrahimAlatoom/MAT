@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MAT</string>
+    <string name="alert">Alert!</string>
+    <string name="agree">Next</string>
+    <string name="submit">Submit</string>
+    <string name="name">Mobile Addiction Text</string>
+    <string name="next">Next</string>
+    <string name="alert_text">Disclaimer: It should be noted that a medical or psychological diagnosis cannot be made only by means of a written test or a screening tool only; This survey is intended for educational and informational purposes only.   If the result is on the upside, it would be reasonable to examine whether your use or overuse is causing any problems with work-life balance.</string>
+</resources>
