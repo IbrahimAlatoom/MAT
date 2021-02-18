@@ -28,12 +28,13 @@
         android:layout_marginStart="@dimen/horizontal_question_margin"
         android:layout_marginTop="@dimen/question_text_size"
         android:layout_marginEnd="@dimen/horizontal_question_margin"
-        android:text="Test test test test test"
+        android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="@dimen/question_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result_image" />
+        app:layout_constraintTop_toBottomOf="@+id/result_image"
+        tools:text="@tools:sample/date/ddmmyy" />
 
     <Button
         android:id="@+id/back_button"
