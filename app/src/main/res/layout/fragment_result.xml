@@ -38,7 +38,7 @@
 
     <Button
         android:id="@+id/back_button"
-        style="@style/button_style"
+        style="@android:style/Widget.DeviceDefault.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/horizontal_question_margin"

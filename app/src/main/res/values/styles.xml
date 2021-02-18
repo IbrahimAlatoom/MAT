@@ -15,4 +15,13 @@
         <item name="android:layout_marginEnd">@dimen/horizontal_question_margin</item>
     </style>
 
+    <style name="header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/horizontal_question_margin</item>
+        <item name="android:layout_marginEnd">@dimen/horizontal_question_margin</item>
+        <item name="android:textColor">@android:color/background_dark</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+    </style>
+
 </resources>
