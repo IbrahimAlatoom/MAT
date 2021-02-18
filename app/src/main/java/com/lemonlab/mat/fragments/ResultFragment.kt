@@ -32,7 +32,7 @@ class ResultFragment : Fragment() {
             in 0..2 -> binding.resultText.text = "سلوكك طبيعي ولكن هذا لا يعني أنك يجب أن تعيش على هاتفك الذكي"
             in 3..4 -> binding.resultText.text = "سلوكك يميل نحو الاستخدام القهري(الإدماني)."
             in 5..7 -> binding.resultText.text = "من المحتمل أن يكون لديك نمط استخدام هاتف ذكي قهري."
-            in 8..15 -> binding.resultText.text = "تفكر في زيارة طبيب نفسي أو معالج نفسي متخصص في الإدمان السلوكي للحصول على استشارة."
+            in 8..16 -> binding.resultText.text = "تفكر في زيارة طبيب نفسي أو معالج نفسي متخصص في الإدمان السلوكي للحصول على استشارة."
         }
         binding.backButton.setOnClickListener(){
             navController = findNavController()

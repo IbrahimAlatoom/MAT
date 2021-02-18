@@ -32,7 +32,7 @@ class TitleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.button.setOnClickListener(
             Navigation.createNavigateOnClickListener(
-                R.id.action_titleFragment_to_testFragment
+                R.id.action_titleFragment_to_alertFragment
             )
         )
     }
