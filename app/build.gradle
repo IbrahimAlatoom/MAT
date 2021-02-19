@@ -47,4 +47,8 @@ dependencies {
 //    circular ImageView
     implementation 'com.mikhaellopez:circularimageview:4.2.0'
     compile 'com.makeramen:roundedimageview:2.3.0'
+
+
+//    Google admob
+    implementation 'com.google.android.gms:play-services-ads:19.7.0'
 }

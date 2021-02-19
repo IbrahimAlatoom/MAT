@@ -39,7 +39,7 @@
                 android:layout_marginStart="@dimen/horizontal_margin"
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:layout_marginEnd="@dimen/horizontal_margin"
-                android:fontFamily="casual"
+                android:fontFamily="@font/roboto_thin"
                 android:text="@{test.currentQuestion.text}"
                 android:textColor="@android:color/background_dark"
                 android:textSize="@dimen/question_text_size"
@@ -62,20 +62,22 @@
                     android:id="@+id/radio_button_yes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
                     android:paddingStart="@dimen/horizontal_margin"
                     android:paddingEnd="@dimen/horizontal_margin"
                     android:text="@{test.answers[0]}"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/button_text_size" />
 
                 <RadioButton
                     android:id="@+id/radio_button_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/vertical_answer_margin"
+                    android:fontFamily="@font/roboto_thin"
                     android:paddingStart="@dimen/horizontal_margin"
                     android:paddingEnd="@dimen/horizontal_margin"
                     android:text="@{test.answers[1]}"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/button_text_size" />
             </RadioGroup>
 
             <Button
