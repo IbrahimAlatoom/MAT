@@ -54,5 +54,31 @@
             app:riv_corner_radius="16dp"
             app:riv_oval="true" />
 
+        <TextView
+            android:id="@+id/source_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/vertical_answer_margin"
+            android:layout_marginBottom="@dimen/horizontal_margin"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/source"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/plus_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="@string/plus14"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/source_text"
+            app:layout_constraintEnd_toStartOf="@+id/source_text"
+            app:layout_constraintTop_toTopOf="@+id/source_text" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
