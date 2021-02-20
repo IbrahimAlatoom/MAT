@@ -17,11 +17,11 @@ class TestFragment : Fragment() {
 
     data class Question(val text: String, val answers: List<String>)
     private val questions: MutableList<Question> = mutableListOf(
-        Question(text = "هل تجد نفسك تقضي وقتًا أطول على هاتفك الذكي أكثر مما تدرك؟",
+        Question(text = R.string.Q1.toString(),
             answers = listOf("نعم", "لا")),
-        Question(text = "هل تجد نفسك تمضي الوقت بلا تفكير بشكل منتظم بالتحديق في هاتفك الذكي؟",
+        Question(text = R.string.Q2.toString(),
             answers = listOf("نعم", "لا")),
-        Question(text = "هل يبدو أنك تفقد مسار الوقت عندما تكون على هاتفك الذكي؟",
+        Question(text = R.string.Q3.toString(),
             answers = listOf("نعم", "لا")),
         Question(text = "هل تجد نفسك تقضي وقتًا أطول في إرسال الرسائل النصية أو التغريد أو المراسلة عبر البريد الإلكتروني بدلاً من التحدث إلى الأشخاص شخصيًا؟",
             answers = listOf("نعم", "لا")),
