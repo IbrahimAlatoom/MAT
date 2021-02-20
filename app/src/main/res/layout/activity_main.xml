@@ -30,7 +30,8 @@
             ads:adUnitId="ca-app-pub-9769401692194876/6075931918"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"></com.google.android.gms.ads.AdView>
+            app:layout_constraintRight_toRightOf="parent">
+        </com.google.android.gms.ads.AdView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
