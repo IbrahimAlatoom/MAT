@@ -17,11 +17,11 @@ class TestFragment : Fragment() {
 
     data class Question(val text: String, val answers: List<String>)
     private val questions: MutableList<Question> = mutableListOf(
-        Question(text = R.string.Q1.toString(),
+        Question(text = "هل تجد نفسك تقضي وقتًا أطول على هاتفك الذكي أكثر مما تدرك؟",
             answers = listOf("نعم", "لا")),
-        Question(text = R.string.Q2.toString(),
+        Question(text = "هل تجد نفسك تمضي الوقت بلا تفكير بشكل منتظم بالتحديق في هاتفك الذكي؟",
             answers = listOf("نعم", "لا")),
-        Question(text = R.string.Q3.toString(),
+        Question(text = "هل يبدو أنك تفقد مسار الوقت عندما تكون على هاتفك الذكي؟",
             answers = listOf("نعم", "لا")),
         Question(text = "هل تجد نفسك تقضي وقتًا أطول في إرسال الرسائل النصية أو التغريد أو المراسلة عبر البريد الإلكتروني بدلاً من التحدث إلى الأشخاص شخصيًا؟",
             answers = listOf("نعم", "لا")),
@@ -52,7 +52,8 @@ class TestFragment : Fragment() {
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
     private val numQuestions = 15
-    private var yesesCounter =0
+    var yesesCounter =0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -62,7 +63,6 @@ class TestFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_test, container, false)
-
         setQuestion(questionIndex)
 
         binding.test = this
